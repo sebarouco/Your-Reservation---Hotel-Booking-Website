@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <!-- Meta tags for proper rendering and SEO -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Page title - appears in browser tab -->
+    <title>Your Reservation - Book Your Perfect Stay</title>
+    
+    <!-- External CSS files -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- ==========================================
+         HEADER SECTION
+         ==========================================
+         Main navigation bar with logo and user options
+    ========================================== -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <!-- Left side: Logo -->
+                <div class="nav-left">
+                    <div class="logo">
+                        <div class="logo-icon">
+                            <i class="fas fa-hotel"></i>
+                        </div>
+                        <span class="logo-text">Your Reservation</span>
+                    </div>
+                </div>
+                
+                <!-- Right side: Navigation buttons -->
+                <div class="nav-right">
+                    <!-- Language selector -->
+                    <button class="nav-btn">
+                        <i class="fas fa-globe"></i>
+                        <span>EN</span>
+                    </button>
+                    
+                    <!-- Currency selector -->
+                    <button class="nav-btn">
+                        <span>$</span>
+                        <span>USD</span>
+                    </button>
+                    
+                    <!-- Property owner portal -->
+                    <button class="nav-btn">
+                        <i class="fas fa-question-circle"></i>
+                        <span>List your property</span>
+                    </button>
+                    
+                    <!-- Partner portal -->
+                    <button class="nav-btn">
+                        <i class="fas fa-globe"></i>
+                        <span>Partner Portal</span>
+                    </button>
+                    
+                    <!-- User registration -->
+                    <button class="nav-btn register-btn">
+                        <i class="fas fa-user"></i>
+                        <span>Register</span>
+                    </button>
+                    
+                    <!-- User sign in -->
+                    <button class="nav-btn">Sign in</button>
+                    
+                    <!-- Mobile menu toggle (hidden on desktop) -->
+                    <button class="mobile-menu-btn">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ==========================================
+         HERO SECTION
+         ==========================================
+         Main landing section with search functionality
+         and promotional content
+    ========================================== -->
+    <section class="hero">
+        <div class="hero-container">
+            <!-- Hero content: Title and subtitle -->
+            <div class="hero-content">
+                <h1 class="hero-title">Find your perfect place to stay</h1>
+                <p class="hero-subtitle">Search hotels, homes, and much more...</p>
+            </div>
+            
+            <!-- ==========================================
+                 SEARCH BAR
+                 ==========================================
+                 Interactive search form with destination,
+                 dates, and guest selection
+            ========================================== -->
+            <div class="search-bar">
+                <!-- Search form grid layout -->
+                <div class="search-grid">
+                    <!-- Destination input field -->
+                    <div class="search-field">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <input type="text" placeholder="Where are you going?" id="destination">
+                    </div>
+                    
+                    <!-- Check-in date picker -->
+                    <div class="search-field">
+                        <i class="fas fa-calendar"></i>
+                        <input type="date" id="check-in">
+                    </div>
+                    
+                    <!-- Check-out date picker -->
+                    <div class="search-field">
+                        <i class="fas fa-calendar"></i>
+                        <input type="date" id="check-out">
+                    </div>
+                    
+                    <!-- Guest count selector -->
+                    <div class="search-field guest-field">
+                        <i class="fas fa-users"></i>
+                        <select id="guests">
+                            <option value="1">1 guest</option>
+                            <option value="2" selected>2 guests</option>
+                            <option value="3">3 guests</option>
+                            <option value="4">4 guests</option>
+                            <option value="5">5+ guests</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Search submit button -->
+                    <button class="search-btn" onclick="searchRooms()">
+                        <i class="fas fa-search"></i>
+                        Search
+                    </button>
+                </div>
+                
+                <!-- ==========================================
+                     POPULAR DESTINATIONS
+                     ==========================================
+                     Quick links to popular destinations
+                     for user convenience
+                ========================================== -->
+                <div class="popular-destinations">
+                    <p class="popular-label">Popular destinations:</p>
+                    <div class="destination-tags">
+                        <button class="destination-tag" onclick="setDestination('New York')">New York</button>
+                        <button class="destination-tag" onclick="setDestination('London')">London</button>
+                        <button class="destination-tag" onclick="setDestination('Paris')">Paris</button>
+                        <button class="destination-tag" onclick="setDestination('Tokyo')">Tokyo</button>
+                        <button class="destination-tag" onclick="setDestination('Dubai')">Dubai</button>
+                        <button class="destination-tag" onclick="setDestination('Barcelona')">Barcelona</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ==========================================
+                 PLATFORM STATISTICS
+                 ==========================================
+                 Display impressive numbers to build trust
+            ========================================== -->
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-number">28,000,000+</div>
+                    <div class="stat-label">Properties</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">153</div>
+                    <div class="stat-label">Countries</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">7,000,000+</div>
+                    <div class="stat-label">Reviews</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         FEATURES SECTION
+         ==========================================
+         Showcase platform features and amenities
+         to highlight value proposition
+    ========================================== -->
+    <section class="features">
+        <div class="container">
+            <!-- Section header -->
+            <div class="section-header">
+                <h2 class="section-title">Why choose our booking platform?</h2>
+                <p class="section-subtitle">We offer the best selection of properties with amazing amenities and services</p>
+            </div>
+            
+            <!-- Features grid: 8 feature cards -->
+            <div class="features-grid">
+                <!-- Free WiFi feature -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-wifi"></i>
+                    </div>
+                    <h3 class="feature-title">Free WiFi</h3>
+                    <p class="feature-description">Stay connected with complimentary high-speed internet access throughout the property</p>
+                </div>
+                
+                <!-- Free Parking feature -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <h3 class="feature-title">Free Parking</h3>
+                    <p class="feature-description">Complimentary parking spaces available for all our guests</p>
+                </div>
+                
+                <!-- Coffee & Tea feature -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-coffee"></i>
+                    </div>
+                    <h3 class="feature-title">Coffee & Tea</h3>
+                    <p class="feature-description">Premium coffee and tea service available 24/7</p>
+                </div>
+                
+                <!-- Fitness Center feature -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-dumbbell"></i>
+                    </div>
+                    <h3 class="feature-title">Fitness Center</h3>
+                    <p class="feature-description">State-of-the-art gym equipment for your workout routine</p>
+                </div>
+                
+                <!-- Restaurant feature -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3 class="feature-title">Restaurant</h3>
+                    <p class="feature-description">Fine dining restaurant serving local and international cuisine</p>
+                </div>
+                
+                <!-- Swimming Pool feature -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-swimming-pool"></i>
+                    </div>
+                    <h3 class="feature-title">Swimming Pool</h3>
+                    <p class="feature-description">Outdoor pool with stunning views and comfortable loungers</p>
+                </div>
+                
+                <!-- Safety First feature -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="feature-title">Safety First</h3>
+                    <p class="feature-description">Enhanced cleaning protocols and 24/7 security</p>
+                </div>
+                
+                <!-- Top Rated feature -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3 class="feature-title">Top Rated</h3>
+                    <p class="feature-description">Highly rated by guests with excellent reviews</p>
+                </div>
+            </div>
+
+            <!-- ==========================================
+                 TRUST SECTION
+                 ==========================================
+                 Build confidence with security and quality
+                 assurances
+            ========================================== -->
+            <div class="trust-section">
+                <h3 class="trust-title">Book with confidence</h3>
+                <div class="trust-grid">
+                    <!-- Secure Booking trust item -->
+                    <div class="trust-item">
+                        <i class="fas fa-shield-alt trust-icon"></i>
+                        <div>
+                            <h4 class="trust-item-title">Secure Booking</h4>
+                            <p class="trust-item-description">Your payment details are safe and encrypted</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Verified Reviews trust item -->
+                    <div class="trust-item">
+                        <i class="fas fa-star trust-icon"></i>
+                        <div>
+                            <h4 class="trust-item-title">Verified Reviews</h4>
+                            <p class="trust-item-description">Real reviews from real guests</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Best Locations trust item -->
+                    <div class="trust-item">
+                        <i class="fas fa-map-marker-alt trust-icon"></i>
+                        <div>
+                            <h4 class="trust-item-title">Best Locations</h4>
+                            <p class="trust-item-description">Properties in the most desirable areas</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         FEATURED PROPERTIES SECTION
+         ==========================================
+         Display sample properties with images,
+         pricing, and booking options
+    ========================================== -->
+    <section class="featured-properties">
+        <div class="container">
+            <!-- Section header -->
+            <div class="section-header">
+                <h2 class="section-title">Featured Properties</h2>
+                <p class="section-subtitle">Discover our handpicked selection of amazing properties around the world</p>
+            </div>
+            
+            <!-- Properties grid container -->
+            <!-- Properties will be dynamically loaded here by JavaScript -->
+            <div class="properties-grid" id="properties-grid">
+                <!-- Loading state shown while properties load -->
+            </div>
+            
+            <!-- Call-to-action button -->
+            <div class="text-center">
+                <button class="cta-button" onclick="viewAllProperties()">View All Properties</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         FOOTER SECTION
+         ==========================================
+         Site navigation, links, and legal information
+    ========================================== -->
+    <footer class="footer">
+        <div class="container">
+            <!-- Footer grid layout -->
+            <div class="footer-grid">
+                <!-- Brand column: Logo and description -->
+                <div class="footer-brand">
+                    <div class="logo">
+                        <div class="logo-icon">
+                            <i class="fas fa-hotel"></i>
+                        </div>
+                        <span class="logo-text">Your Reservation</span>
+                    </div>
+                    <p class="footer-description">Making the world more accessible, one booking at a time.</p>
+                    <!-- Social media links -->
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Explore column: Property types -->
+                <div class="footer-column">
+                    <h3 class="footer-title">Explore</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Hotels</a></li>
+                        <li><a href="#">Apartments</a></li>
+                        <li><a href="#">Resorts</a></li>
+                        <li><a href="#">Villas</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Destinations column: Popular locations -->
+                <div class="footer-column">
+                    <h3 class="footer-title">Top Destinations</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">New York</a></li>
+                        <li><a href="#">London</a></li>
+                        <li><a href="#">Paris</a></li>
+                        <li><a href="#">Tokyo</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Partners column: Partner resources -->
+                <div class="footer-column">
+                    <h3 class="footer-title">Partners</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-briefcase"></i> Extranet login</a></li>
+                        <li><a href="#">Partner help</a></li>
+                        <li><a href="#">List your property</a></li>
+                        <li><a href="#">Become an affiliate</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Support column: Help resources -->
+                <div class="footer-column">
+                    <h3 class="footer-title">Support</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-question-circle"></i> Contact</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Privacy policy</a></li>
+                        <li><a href="#">Terms & conditions</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Footer bottom section -->
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <!-- Copyright notice -->
+                    <p>&copy; 2024 Your Reservation™. All rights reserved.</p>
+                    <!-- Language and currency selectors -->
+                    <div class="footer-bottom-right">
+                        <button class="footer-btn">
+                            <i class="fas fa-globe"></i>
+                            English (US)
+                        </button>
+                        <button class="footer-btn">$ USD</button>
+                    </div>
+                </div>
+                <!-- Company disclaimer -->
+                <p class="footer-disclaimer">
+                    Your Reservation is part of a leading travel and hospitality platform, providing exceptional booking experiences worldwide.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==========================================
+         JAVASCRIPT
+         ==========================================
+         External JavaScript file for interactivity
+    ========================================== -->
+    <script src="script.js"></script>
+</body>
+</html>

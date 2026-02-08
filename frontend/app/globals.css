@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    color-scheme: dark;
+  }
+  
+  body {
+    @apply bg-booking-gray-900 text-white;
+  }
+}
+
+@layer components {
+  .booking-card {
+    @apply bg-booking-gray-800 border border-booking-gray-700 rounded-lg shadow-lg;
+  }
+  
+  .booking-input {
+    @apply bg-booking-gray-800 border-booking-gray-700 text-white placeholder-booking-gray-400;
+  }
+  
+  .booking-button-primary {
+    @apply bg-booking-blue hover:bg-booking-blue-dark text-white font-semibold py-3 px-6 rounded-lg transition-colors;
+  }
+  
+  .booking-button-secondary {
+    @apply bg-booking-orange hover:bg-orange-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors;
+  }
+}

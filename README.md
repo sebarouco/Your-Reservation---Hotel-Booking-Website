@@ -2,6 +2,8 @@
 
 A modern, responsive hotel booking website inspired by Booking.com with a sleek dark theme. Built with pure HTML, CSS, and JavaScript for optimal performance and simplicity.
 
+https://www.youtube.com/watch?v=XMMMr348-14
+
 ## ✨ Features
 
 ### 🎨 **Design & User Experience**
@@ -158,10 +160,6 @@ Properties are defined in `script.js`. Add new properties by extending the `samp
     // ... more properties
 }
 ```
-
-## 🌟 Live Demo
-
-Experience the website live at: **[Your Demo Link Here]**
 
 ## 📱 Screenshots
 
